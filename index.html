@@ -1,225 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="MD MONJURUL ALAM - Full Stack Developer & Network Engineer"
+    />
+    <title>MD MONJURUL ALAM — Portfolio</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js"></script>
   </head>
+
   <body>
-    <!-- Header -->
-    <header>
-      <h1>John Doe</h1>
-      <p>Web Developer | Programmer | Designer</p>
+    <!-- NAV -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="container nav-inner">
+          <a class="brand" href="index.html">MD MONJURUL ALAM</a>
+
+          <button
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active-link">Home</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="hero pro-hero">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <h1 class="hero-title">
+              Hi, I'm <span class="accent">MD MONJURUL ALAM</span>
+            </h1>
+            <p class="hero-subtitle typing">
+              Full-Stack Developer • Network Engineer • Problem Solver
+            </p>
+
+            <p class="hero-summary">
+              I build clean, modern, responsive web applications and
+              troubleshoot complex network systems. I love combining software
+              and networking to deliver reliable and elegant digital solutions.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="projects.html" class="btn primary">🚀 View Projects</a>
+              <a href="MdMonjuCV.pdf" class="btn ghost">📄 Download CV</a>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-photo-frame glass">
+              <img
+                src="images/profile.jpg"
+                alt="MD MONJURUL ALAM Portrait"
+                class="hero-photo"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Portfolio</div>
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- FEATURE CARDS -->
+      <section class="container features">
+        <h2 class="section-title">What I Do</h2>
 
-        <!-- Dark Mode Toggle -->
-        <button id="theme-toggle">🌙</button>
+        <div class="feature-grid">
+          <div class="feature-card glass reveal">
+            <h3>💻 Web Development</h3>
+            <p>
+              Building modern, responsive and clean web apps using Laravel, PHP,
+              JavaScript, and MySQL.
+            </p>
+          </div>
 
-        <!-- Mobile Menu -->
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+          <div class="feature-card glass reveal">
+            <h3>📡 Network Engineering</h3>
+            <p>
+              Expert in MikroTik, FTTH deployment, router configuration, VLAN,
+              firewall & failover.
+            </p>
+          </div>
 
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <div class="feature-card glass reveal">
+            <h3>⚙️ System Administration</h3>
+            <p>
+              Linux server setup, security hardening, remote support and system
+              optimization.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS PREVIEW -->
+      <section class="container home-skills">
+        <h2 class="section-title">Core Skills</h2>
+
+        <div class="skills-preview">
+          <div class="skill-tag">HTML</div>
+          <div class="skill-tag">CSS</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">PHP</div>
+          <div class="skill-tag">Laravel</div>
+          <div class="skill-tag">MikroTik</div>
+          <div class="skill-tag">Linux</div>
+          <div class="skill-tag">MySQL</div>
+        </div>
+      </section>
+
+      <!-- PROJECT PREVIEW -->
+      <section class="container section-projects">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-preview-grid">
+          <a href="projects.html" class="project-card glass reveal">
+            <h3>Portfolio Website</h3>
+            <p>
+              Modern responsive personal portfolio with dark mode + animations.
+            </p>
+          </a>
+
+          <a href="projects.html" class="project-card glass reveal">
+            <h3>Todo App</h3>
+            <p>Realtime todo app using React + Firebase.</p>
+          </a>
+
+          <a href="projects.html" class="project-card glass reveal">
+            <h3>Weather Dashboard</h3>
+            <p>Live weather updates from OpenWeather API.</p>
+          </a>
+        </div>
+
+        <div class="center">
+          <a href="projects.html" class="btn primary">See All Projects</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 MD MONJURUL ALAM. All Rights Reserved.</p>
       </div>
-    </nav>
-
-    <!-- CV Section -->
-    <section id="cv">
-      <h2>My CV</h2>
-      <p>
-        Hello! I'm John Doe, a passionate web developer with experience in
-        front-end and back-end technologies.
-      </p>
-      <ul>
-        <li><strong>Education:</strong> BSc in Computer Science</li>
-        <li><strong>Skills:</strong> HTML, CSS, JavaScript, React, Node.js</li>
-        <li><strong>Experience:</strong> 2+ years of web development</li>
-      </ul>
-
-      <!-- Download CV Button -->
-      <div class="cv-download">
-        <a href="JohnDoeCV.pdf" download class="btn">📄 Download My CV</a>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>My Projects</h2>
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>A personal portfolio website to showcase my work and experience.</p>
-      </div>
-
-      <div class="project">
-        <h3>Todo App</h3>
-        <p>A simple task management app built with React and Firebase.</p>
-      </div>
-
-      <div class="project">
-        <h3>Weather App</h3>
-        <p>A web app that fetches real-time weather data using an API.</p>
-      </div>
-    </section>
-
-    <!-- Project Gallery -->
-    <section id="gallery">
-      <h2>Project Gallery</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/300x200" alt="Project 1" />
-        <img src="https://via.placeholder.com/300x200" alt="Project 2" />
-        <img src="https://via.placeholder.com/300x200" alt="Project 3" />
-        <img src="https://via.placeholder.com/300x200" alt="Project 4" />
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>Send me a message directly using this form:</p>
-
-      <!-- Contact Form -->
-      <form id="contact-form">
-        <input
-          type="text"
-          id="name"
-          name="from_name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="email"
-          id="email"
-          name="reply_to"
-          placeholder="Your Email"
-          required
-        />
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-
-      <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/yourusername" target="_blank"
-          >LinkedIn</a
-        >
-        <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
-      </div>
-    </section>
-
-    <!-- Thank You Modal -->
-    <div id="thankyou-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h3>🎉 Thank You!</h3>
-        <p>
-          Your message has been sent successfully. I’ll get back to you soon!
-        </p>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 John Doe. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-      const themeToggle = document.getElementById("theme-toggle");
-      const body = document.body;
-      const modal = document.getElementById("thankyou-modal");
-      const closeBtn = document.querySelector(".close-btn");
-
-      // Mobile menu toggle
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-      });
-
-      // Dark mode toggle
-      themeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        themeToggle.textContent = body.classList.contains("dark-mode")
-          ? "☀️"
-          : "🌙";
-        localStorage.setItem(
-          "theme",
-          body.classList.contains("dark-mode") ? "dark" : "light"
-        );
-      });
-
-      // Load saved theme
-      if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-        themeToggle.textContent = "☀️";
-      }
-
-      // Initialize EmailJS
-      (function () {
-        emailjs.init("HlSZtObBKTuKIS-1g"); // Replace with your EmailJS public key
-      })();
-
-      // Handle contact form with modal
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          emailjs.sendForm("service_jvisxob", "template_1qvxn0n", this).then(
-            () => {
-              this.reset();
-              modal.style.display = "flex";
-              modal.classList.remove("fade-out"); // Reset any previous fade-out
-
-              // Auto-close after 4 seconds with fade-out
-              setTimeout(() => {
-                modal.classList.add("fade-out");
-                setTimeout(() => {
-                  modal.style.display = "none";
-                }, 500); // match animation duration
-              }, 4000);
-            },
-            (error) => {
-              alert("❌ Failed to send message. Please try again.");
-              console.error(error);
-            }
-          );
-        });
-
-      // Close modal manually if user clicks the close button or outside
-      closeBtn.onclick = () => {
-        modal.classList.add("fade-out");
-        setTimeout(() => {
-          modal.style.display = "none";
-        }, 500);
-      };
-
-      window.onclick = (event) => {
-        if (event.target === modal) {
-          modal.classList.add("fade-out");
-          setTimeout(() => {
-            modal.style.display = "none";
-          }, 500);
-        }
-      };
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

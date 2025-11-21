@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — MD MONJURUL ALAM</title>
+    <meta
+      name="description"
+      content="Selected front-end projects by MD MONJURUL ALAM — Portfolio, Landing Page, Image Gallery"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">MD MONJURUL ALAM</a>
+
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="projects.html" class="active-link">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          🌙
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO / HEADER -->
+    <header class="container" style="padding: 28px 0 8px">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
+        "
+      >
+        <div>
+          <h1 style="margin: 0 0 6px">Featured Projects</h1>
+          <p class="muted" style="margin: 0">
+            Selected front-end projects — live demos and source code.
+          </p>
+        </div>
+
+        <!-- Download CV uses local uploaded file path -->
+        <div>
+          <a class="btn ghost" href="/mnt/data/cv NEW 7.10.2025.pdf" download
+            >📄 Download CV</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- PROJECTS GRID -->
+    <main class="container page">
+      <section class="projects-grid">
+        <!-- Project 1: Portfolio Website (real links) -->
+        <article class="project-card glass reveal">
+          <img
+            src="images/portfolio.png"
+            class="project-thumb"
+            alt="Portfolio Screenshot"
+          />
+          
+            <h3 style="margin: 0">Portfolio Website</h3>
+            <div class="tags" style="display: flex; gap: 6px; flex-wrap: wrap">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <p class="muted" style="margin: 10px 0 14px">
+            Personal portfolio showcasing projects, CV, and blog-style notes.
+            Responsive with dark mode and animated UI.
+          </p>
+
+          
+            <a
+              class="btn primary"
+              href="https://Monju007.github.io/my-portfolio"
+              target="_blank"
+              rel="noopener"
+              >Live Demo</a
+            >
+            <a
+              class="btn ghost"
+              href="https://github.com/Monju007/my-portfolio"
+              target="_blank"
+              rel="noopener"
+              >Source</a
+            >
+            
+        </article>
+
+        <!-- Project 2: Responsive Landing Page (sample under your GitHub profile) -->
+        <article class="project-card glass reveal">
+          <img
+            src="images/project-portfolio.jpg"
+            class="project-thumb"
+            alt="Portfolio Screenshot"
+          />
+          
+            <h3 style="margin: 0">Responsive Landing Page</h3>
+            <div class="tags" style="display: flex; gap: 6px">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">Accessibility</span>
+            </div>
+          </div>
+
+          <p class="muted" style="margin: 10px 0 14px">
+            Clean, responsive landing page template with hero, features,
+            pricing, and footer. Great starter for product pages.
+          </p>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            <a
+              class="btn primary"
+              href="https://Monju007.github.io/responsive-landing-page"
+              target="_blank"
+              rel="noopener"
+              >Live Demo</a
+            >
+            <a
+              class="btn ghost"
+              href="https://github.com/Monju007/responsive-landing-page"
+              target="_blank"
+              rel="noopener"
+              >Source</a
+            >
+            
+          </div>
+        </article>
+
+        <!-- Project 3: Image Gallery Lightbox (sample under your GitHub profile) -->
+        <article class="project-card glass reveal">
+          <img
+            src="images/weather-app.png"
+            class="project-thumb"
+            alt="Portfolio Screenshot"
+          />
+        
+            <h3 style="margin: 0">Weather App</h3>
+            <div class="tags" style="display: flex; gap: 6px">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JS</span>
+            </div>
+          </div>
+
+          <p class="muted" style="margin: 10px 0 14px">
+            A performant, accessible image gallery with keyboard support and
+            lightbox for showcasing screenshots and photos.
+          </p>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            <a
+              class="btn primary"
+              href="https://Monju007.github.io/my-weather-app"
+              target="_blank"
+              rel="noopener"
+              >Live Demo</a
+            >
+            <a
+              class="btn ghost"
+              href="https://github.com/Monju007/my-weather-app"
+              target="_blank"
+              rel="noopener"
+              >Source</a
+            >
+            
+        </article>
+      </section>
+
+      <!-- optional: call-to-action -->
+      <section style="margin-top: 36px; text-align: center">
+        <a class="btn primary" href="contact.html">Discuss a project</a>
+      </section>
+    </main>
+
+    <footer class="site-footer" style="margin-top: 48px">
+      <div class="container"><p>© 2025 MD MONJURUL ALAM.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

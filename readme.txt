@@ -52,4 +52,20 @@ Service ID
 
 Template ID
 
-Replace them in this line of code:
+Replace them in this line of code
+
+
+
+
+my-portfolio/
+│
+├─ index.html           <-- Main HTML file
+├─ style.css            <-- CSS styles
+├─ script.js            <-- Optional: external JS (or keep inline)
+├─ JohnDoeCV.pdf        <-- Your CV file
+├─ README.md            <-- Optional project description
+├─ assets/              <-- Folder for images, icons, or other media
+│   ├─ project1.png
+│   ├─ project2.png
+│   └─ ...
+└─ .gitignore           <-- Optional, if using Git/GitHub

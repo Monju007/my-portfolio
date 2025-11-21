@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Achievements — MD MONJURUL ALAM</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">MD MONJURUL ALAM</a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          🌙
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="container page">
+        <h1>Achievements</h1>
+        <p class="muted">
+          Milestones and certificates that reflect my learning and
+          contributions.
+        </p>
+
+        <div class="achievement-list">
+          <article class="card">
+            <h3>🏅 Best Web Developer Award — 2024</h3>
+            <p>Recognized at National Tech Expo for portfolio system.</p>
+          </article>
+          <article class="card">
+            <h3>💻 Completed 100+ Projects</h3>
+            <p>Delivered work across multiple industries.</p>
+          </article>
+          <article class="card">
+            <h3>🚀 Open Source Contributor</h3>
+            <p>Contributed to performance and UI improvements in OSS.</p>
+          </article>
+          <article class="card">
+            <h3>🎓 Certified — Full Stack Track</h3>
+            <p>Completed front-end and back-end specialization tracks.</p>
+          </article>
+        </div>
+
+        <!-- Certificates slider -->
+        <section id="certificates" class="certificates">
+          <h2>Certificates</h2>
+          <div class="certificate-slider" aria-hidden="false">
+            <div class="slide-track" id="slide-track">
+              <!-- original -->
+              <div class="slide">
+                <img src="images/cert1.jpg" alt="Certificate 1" />
+              </div>
+              <div class="slide">
+                <img src="images/cert2.jpg" alt="Certificate 2" />
+              </div>
+              <div class="slide">
+                <img src="images/cert3.jpg" alt="Certificate 3" />
+              </div>
+              <div class="slide">
+                <img src="images/cert4.jpg" alt="Certificate 4" />
+              </div>
+              <div class="slide">
+                <img src="images/cert5.jpg" alt="Certificate 5" />
+              </div>
+              <!-- duplicate for smooth loop -->
+              <div class="slide">
+                <img src="images/cert1.jpg" alt="Certificate 1" />
+              </div>
+              <div class="slide">
+                <img src="images/cert2.jpg" alt="Certificate 2" />
+              </div>
+              <div class="slide">
+                <img src="images/cert3.jpg" alt="Certificate 3" />
+              </div>
+              <div class="slide">
+                <img src="images/cert4.jpg" alt="Certificate 4" />
+              </div>
+              <div class="slide">
+                <img src="images/cert5.jpg" alt="Certificate 5" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-hidden="true"
+      aria-label="Certificate viewer"
+    >
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">
+        ✖
+      </button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+    </div>
+
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MD MONJURUL ALAM.</p></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
