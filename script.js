@@ -198,3 +198,20 @@ document.addEventListener("DOMContentLoaded", () => {
     pb.style.width = "0%";
   });
 })();
+/* =======================================================
+   MOBILE GLASS ANIMATION HANDLER
+   ======================================================= */
+if (window.innerWidth <= 768) {
+  const glassItems = document.querySelectorAll(".glass-mobile-anim");
+
+  const glassObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  glassItems.forEach((el) => glassObs.observe(el));
+}
