@@ -38,9 +38,9 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(146, 33, 33, 0.664);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(184, 29, 29, 0.04);
   z-index: 60;
 }
 .nav-inner {
@@ -803,4 +803,157 @@ body.dark .progress {
 /* Dark Mode */
 body.dark .project-info {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15));
+}
+/* ============================
+   MOBILE OPTIMIZATION
+   ============================ */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav-inner {
+    padding: 0.7rem 0;
+  }
+  .brand {
+    font-size: 1rem;
+  }
+
+  /* HERO SECTION */
+  .pro-hero {
+    padding: 2.5rem 0 1rem;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column-reverse; /* image first, text second */
+    gap: 1.6rem;
+    text-align: center;
+  }
+  .hero-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+    line-height: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-summary {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .btn {
+    width: 90%;
+    text-align: center;
+  }
+
+  /* WHAT I DO */
+  .features {
+    padding-top: 0.5rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* SKILLS */
+  .skills-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  /* PROJECT PREVIEW */
+  .projects-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .project-card {
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* GENERAL SPACING */
+  section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* CENTERING DIV */
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px; /* EXTRA SAFE SPACE */
+  }
+  main {
+    padding-bottom: 60px;
+  }
+  section {
+    padding-bottom: 2rem !important;
+  }
+}
+/* =======================================================
+   MOBILE GLASS ANIMATIONS — ALL PAGES
+   ======================================================= */
+@media (max-width: 768px) {
+  /* Base glass animation class */
+  .glass-mobile-anim {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+    filter: blur(6px);
+    transition: opacity 0.7s ease-out, transform 0.8s ease-out,
+      filter 0.8s ease-out;
+  }
+
+  .glass-mobile-anim.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  /* Optional extra morph effect */
+  .glass-mobile-anim.show {
+    backdrop-filter: blur(14px) saturate(145%);
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  /* Dark mode nice glow */
+  body.dark .glass-mobile-anim.show {
+    background: rgba(30, 30, 40, 0.28);
+    backdrop-filter: blur(22px) saturate(140%);
+  }
 }
