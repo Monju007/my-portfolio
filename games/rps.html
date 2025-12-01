@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rock Paper Scissors — MD MONJURUL ALAM</title>
+    <link rel="stylesheet" href="../games.css" />
+    <link rel="stylesheet" href="../games-ui.css" />
+  </head>
+  <body class="game-page">
+    <header class="game-top">
+      <h1>✊ 📄 ✂️ Rock Paper Scissors</h1>
+      <div class="game-controls">
+        <div class="scoreboard panel">
+          <div class="score-chip">You: <span id="rps-you">0</span></div>
+          <div class="score-chip">AI: <span id="rps-ai">0</span></div>
+        </div>
+        <button class="btn small" id="rps-start">Play</button>
+        <a class="btn small ghost" href="../entertainment.html">Exit</a>
+      </div>
+    </header>
+
+    <main class="game-center">
+      <div class="panel" style="width: 100%; max-width: 680px">
+        <div id="rps-area" class="rps-area">
+          <div class="rps-row">
+            <button class="rps-option" data-choice="rock">✊ Rock</button>
+            <button class="rps-option" data-choice="paper">✋ Paper</button>
+            <button class="rps-option" data-choice="scissors">
+              ✌ Scissors
+            </button>
+          </div>
+          <div class="center muted" id="rps-result">Tap an option to play</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="game-footer-space"></div>
+
+    <script src="../js/rps.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tic Tac Toe — MD MONJURUL ALAM</title>
+    <link rel="stylesheet" href="../games.css" />
+    <!-- UI file appended with games-ui CSS or include games-ui.css -->
+    <link rel="stylesheet" href="../games-ui.css" />
+  </head>
+  <body class="game-page">
+    <header class="game-top">
+      <h1>⭕❌ Tic Tac Toe</h1>
+      <div class="game-controls">
+        <div class="scoreboard panel">
+          <div class="score-chip">X: <span id="score-x">0</span></div>
+          <div class="score-chip">Draws: <span id="score-draw">0</span></div>
+          <div class="score-chip">O: <span id="score-o">0</span></div>
+        </div>
+
+        <button class="btn small" id="open-settings">Settings</button>
+        <button class="btn small ghost" id="btn-restart">Restart</button>
+        <a href="../entertainment.html" class="btn small ghost">Exit</a>
+      </div>
+    </header>
+
+    <main class="game-center">
+      <div id="game-stage" class="panel fade-in">
+        <div
+          id="tic-board"
+          class="tic-board"
+          aria-label="Tic Tac Toe board"
+        ></div>
+        <div class="center">
+          <div id="ttt-status" class="muted">Player X's turn</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Settings modal -->
+    <div id="settings-modal" class="modal" aria-hidden="true">
+      <div class="modal-card panel">
+        <h3>Settings</h3>
+        <div class="settings-grid">
+          <label
+            >Sound
+            <div id="sound-toggle" class="toggle on">
+              <div class="dot"></div></div
+          ></label>
+          <label
+            >Vibration
+            <div id="vibrate-toggle" class="toggle"><div class="dot"></div></div
+          ></label>
+          <label
+            >Opponent:
+            <select id="opponent-select">
+              <option value="ai">Play vs AI (Unbeatable)</option>
+              <option value="human">2 Player (Local)</option>
+            </select>
+          </label>
+          <div style="display: flex; align-items: center; gap: 8px">
+            <button class="btn" id="close-settings">Close</button>
+            <button class="btn ghost" id="reset-score">Reset Scores</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-footer-space"></div>
+
+    <script src="../js/tic.js" defer></script>
+  </body>
+</html>

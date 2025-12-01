@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Snake — MD MONJURUL ALAM</title>
+    <link rel="stylesheet" href="../games.css" />
+    <link rel="stylesheet" href="../games-ui.css" />
+  </head>
+  <body class="game-page">
+    <header class="game-top">
+      <h1>🐍 Snake</h1>
+      <div class="game-controls">
+        <div class="scoreboard panel">
+          <div class="score-chip">Score: <span id="snake-score">0</span></div>
+        </div>
+        <button class="btn small" id="snake-start">Play</button>
+        <button class="btn small ghost" id="snake-open-settings">
+          Settings
+        </button>
+        <a class="btn small ghost" href="../entertainment.html">Exit</a>
+      </div>
+    </header>
+
+    <main class="game-center">
+      <div class="panel" style="width: 92%; max-width: 520px">
+        <div class="snake-wrap center">
+          <canvas id="snake-canvas"></canvas>
+        </div>
+        <div class="center muted">Swipe on touch devices or use arrow keys</div>
+      </div>
+    </main>
+
+    <!-- settings modal -->
+    <div id="snake-settings" class="modal" aria-hidden="true">
+      <div class="modal-card panel">
+        <h3>Snake Settings</h3>
+        <div class="settings-grid">
+          <label
+            >Speed
+            <input id="speed-range" type="range" min="50" max="250" value="120"
+          /></label>
+          <label
+            >Wrap Mode
+            <select id="wrap-mode">
+              <option value="wrap">Wrap Around</option>
+              <option value="solid">Solid Walls</option>
+            </select>
+          </label>
+          <div
+            style="
+              grid-column: 1/-1;
+              display: flex;
+              gap: 8px;
+              justify-content: flex-end;
+            "
+          >
+            <button class="btn" id="snake-close-settings">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-footer-space"></div>
+
+    <script src="../js/snake.js" defer></script>
+  </body>
+</html>

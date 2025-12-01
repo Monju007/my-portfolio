@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Memory Match — MD MONJURUL ALAM</title>
+    <link rel="stylesheet" href="../games.css" />
+    <link rel="stylesheet" href="../games-ui.css" />
+  </head>
+  <body class="game-page">
+    <header class="game-top">
+      <h1>🧠 Memory Match</h1>
+      <div class="game-controls">
+        <div class="scoreboard panel">
+          <div class="score-chip">Matches: <span id="mem-matched">0</span></div>
+        </div>
+        <button class="btn small" id="mem-start">Play</button>
+        <button class="btn small ghost" id="mem-settings-open">Settings</button>
+        <a class="btn small ghost" href="../entertainment.html">Exit</a>
+      </div>
+    </header>
+
+    <main class="game-center">
+      <div class="panel" style="width: 100%; max-width: 760px">
+        <div id="memory-grid" class="memory-grid"></div>
+        <div class="center muted" style="margin-top: 10px">
+          <span id="mem-status">Ready</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- settings -->
+    <div id="mem-settings" class="modal" aria-hidden="true">
+      <div class="modal-card panel">
+        <h3>Memory Settings</h3>
+        <div class="settings-grid">
+          <label
+            >Difficulty:
+            <select id="mem-diff">
+              <option value="6">Easy (6)</option>
+              <option value="8" selected>Normal (8)</option>
+              <option value="12">Hard (12)</option>
+            </select>
+          </label>
+          <div
+            style="
+              grid-column: 1/-1;
+              display: flex;
+              justify-content: flex-end;
+              gap: 8px;
+            "
+          >
+            <button class="btn" id="mem-settings-close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-footer-space"></div>
+
+    <script src="../js/memory.js" defer></script>
+  </body>
+</html>

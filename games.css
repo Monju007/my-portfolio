@@ -1,0 +1,946 @@
+/* =========================
+   GAMES UI — professional
+   Append to games.css or save as games-ui.css
+   ========================= */
+
+/* shared tokens */
+:root {
+  --bg-1: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(6, 8, 15, 0.96));
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.03);
+  --accent: #0a84ff;
+  --accent-2: #7c3aed;
+  --muted: #9aa6b2;
+  --radius: 14px;
+}
+
+/* page wrapper */
+.game-page,
+.game {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  padding: 16px;
+  color: #e6eef8;
+  background: var(--bg-1);
+  min-height: calc(100vh - 90px);
+}
+
+/* top bar: title + controls */
+.game-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.game-top h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+.game-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* shared control styles */
+.btn {
+  background: linear-gradient(180deg, var(--accent), #0677e6);
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e6eef8;
+  box-shadow: none;
+}
+.btn.small {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* glass panel */
+.panel {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: var(--radius);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+}
+
+/* scoreboard */
+.scoreboard {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 8px;
+  border-radius: 10px;
+}
+.score-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* big centered area */
+.game-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.6),
+    rgba(2, 6, 23, 0.85)
+  );
+}
+.modal.open {
+  display: flex;
+}
+.modal-card {
+  width: min(560px, 92%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* settings layout */
+.settings-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.settings-grid label {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+}
+.toggle .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  transform: translateX(0);
+  transition: transform 0.18s ease;
+}
+.toggle.on {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+.toggle.on .dot {
+  transform: translateX(20px);
+}
+
+/* responsive centrepieces */
+
+/* Tic board: modern neon grid */
+.tic-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(360px, 86vw);
+  max-width: 420px;
+  margin: 6px auto;
+  padding: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(10, 132, 255, 0.06);
+}
+.tic-cell {
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  font-size: clamp(26px, 6.5vw, 40px);
+  font-weight: 700;
+  color: #f8fafc;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.12s ease, box-shadow 0.12s;
+}
+.tic-cell:active {
+  transform: scale(0.98);
+}
+.tic-cell.win {
+  box-shadow: 0 8px 32px rgba(10, 132, 255, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 132, 255, 0.06),
+    rgba(10, 132, 255, 0.03)
+  );
+}
+
+/* RPS */
+.rps-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.rps-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rps-option {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
+}
+
+/* memory grid + card flip */
+.memory-grid {
+  display: grid;
+  gap: 10px;
+  width: min(600px, 92%);
+  margin: auto;
+}
+.memory-card {
+  position: relative;
+  perspective: 1000px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.memory-card .inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+  transform-style: preserve-3d;
+}
+.memory-card.flipped .inner {
+  transform: rotateY(180deg);
+}
+.memory-card .face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  font-size: 1.6rem;
+}
+.memory-card .front {
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--muted);
+}
+.memory-card .back {
+  transform: rotateY(180deg);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+/* snake canvas container */
+.snake-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#snake-canvas {
+  width: min(460px, 92vw);
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(2, 6, 23, 0.8));
+}
+
+/* small utilities */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* footer space to ensure not overlapped on small screens */
+.game-footer-space {
+  height: 64px;
+}
+
+/* transitions */
+.fade-in {
+  animation: fadeIn 0.28s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* responsive */
+@media (max-width: 520px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+  .scoreboard {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .rps-option {
+    width: 86px;
+    height: 86px;
+  }
+}
+/* =======================================================
+   MOBILE GLASS ANIMATIONS — ALL PAGES
+   ======================================================= */
+@media (max-width: 768px) {
+  /* Base glass animation class */
+  .glass-mobile-anim {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+    filter: blur(6px);
+    transition: opacity 0.7s ease-out, transform 0.8s ease-out,
+      filter 0.8s ease-out;
+  }
+
+  .glass-mobile-anim.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  /* Optional extra morph effect */
+  .glass-mobile-anim.show {
+    backdrop-filter: blur(14px) saturate(145%);
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
+/* Entertainment Page – Tic Tac Toe */
+.tictactoe {
+  max-width: 330px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 14px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+#status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  justify-content: center;
+  gap: 6px;
+}
+
+.cell {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
+  user-select: none;
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(211, 22, 22, 0.25);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell.played {
+  background: rgba(0, 123, 255, 0.3);
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+/* Game Tabs */
+.game-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.4rem;
+  overflow-x: auto;
+}
+
+.game-tab {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Game Container */
+.game {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.game-active {
+  display: block !important;
+}
+
+/* RPS */
+.rps-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.rps-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.rps-result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Memory Game */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 10px;
+  justify-content: center;
+}
+.memory-card {
+  width: 70px;
+  height: 70px;
+  background: rgba(184, 33, 33, 0.2);
+  border-radius: 10px;
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.memory-card.matched {
+  background: var(--accent);
+  color: white;
+}
+
+/*here*/
+
+/* ============================
+   Games: responsive + mobile friendly
+   Append to bottom of style.css
+   ============================ */
+
+/* Tabs */
+.game-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.game-tab {
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.game-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Game containers */
+.games-wrapper .game {
+  display: none;
+}
+.games-wrapper .game.game-active {
+  display: block;
+}
+.game {
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 8px 30px rgba(228, 13, 13, 0.06);
+}
+
+/* Tic board container */
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.tic-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.tic-cell {
+  background: rgba(223, 16, 16, 0.06);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  touch-action: manipulation;
+}
+
+/* ensure large touch target */
+.btn.large {
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+/* RPS */
+.rps-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.rps-btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+/* Memory */
+.memory-grid {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.memory-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  user-select: none;
+}
+
+/* Snake canvas wrapper */
+.snake-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+}
+#snake-canvas {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  background: transparent;
+  touch-action: none;
+}
+
+/* small screens adjustments */
+@media (max-width: 480px) {
+  .tic-cell {
+    font-size: 1.6rem;
+  }
+  .memory-grid {
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+  }
+  .game {
+    padding: 12px;
+  }
+}
+
+/* larger screens */
+@media (min-width: 481px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+  }
+}
+
+/* accessibility focus */
+.tic-cell:focus,
+.memory-card:focus,
+.rps-btn:focus,
+.game-tab:focus {
+  outline: 3px solid rgba(63, 10, 255, 0.18);
+  outline-offset: 3px;
+}
+
+/* small polished touches */
+.game-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Game Pages Base */
+.game-page {
+  font-family: Poppins, sans-serif;
+  background: #0d1117;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Game Hub Cards */
+.game-card {
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  display: block;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+/* Game Grid */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Game Menu */
+.game-menu button,
+.exit-btn {
+  padding: 12px 20px;
+  margin: 6px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.exit-btn {
+  background: crimson;
+  color: white;
+  text-decoration: none;
+}
+
+/* Settings Panel */
+.settings-panel {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 90%;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Tic Tac Toe */
+.tic-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  max-width: 350px;
+  margin: 1rem auto;
+}
+
+.tic-board button {
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Memory */
+.memory-board {
+  display: grid;
+  margin-top: 1rem;
+  gap: 12px;
+}
+
+/* Snake */
+#snake-canvas {
+  background: black;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+}
+/* ---------- Game Launcher Styles & Animations ---------- */
+
+/* launcher grid */
+.launcher-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin: 24px 0;
+  align-items: stretch;
+}
+
+/* tile */
+.launcher-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.06);
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* visual circle */
+.tile-visual {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  box-shadow: inset 0 -4px 12px rgba(2, 6, 23, 0.03);
+}
+
+/* icon */
+.tile-icon {
+  width: 36px;
+  height: 36px;
+  fill: var(--accent, #0a84ff);
+  transition: transform 300ms ease;
+}
+
+/* titles */
+.tile-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text, #fff);
+  text-align: center;
+}
+.tile-sub {
+  font-size: 0.85rem;
+  color: var(--muted, #9aa6b2);
+  text-align: center;
+}
+
+/* hover (desktop) */
+.launcher-tile:hover {
+  transform: translateY(-8px) rotate(-0.5deg);
+  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+}
+.launcher-tile:hover .tile-visual {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(10, 132, 255, 0.06);
+}
+.launcher-tile:active {
+  transform: translateY(-2px) scale(0.995);
+  transition-duration: 120ms;
+}
+
+/* focus accessible */
+.launcher-tile:focus {
+  outline: 3px solid rgba(10, 132, 255, 0.12);
+  outline-offset: 4px;
+  transform: translateY(-6px);
+}
+
+/* soft floating animation for icons */
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.tile-icon {
+  animation: floaty 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ripple/play animation (grows then fades) */
+.launcher-tile .ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.1);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle at center,
+    rgba(10, 132, 255, 0.28),
+    rgba(10, 132, 255, 0.08)
+  );
+  opacity: 0.9;
+  transition: transform 600ms ease, opacity 600ms ease;
+}
+
+/* small badge last-played */
+.tile-badge {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* entrance animation for grid */
+.launcher-grid {
+  animation: launcher-in 420ms ease both;
+}
+@keyframes launcher-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* responsive tweaks */
+@media (max-width: 520px) {
+  .tile-visual {
+    width: 62px;
+    height: 62px;
+    border-radius: 12px;
+  }
+  .tile-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .launcher-tile {
+    padding: 14px;
+  }
+}
+/* Dark mode nice glow */
+body.dark .glass-mobile-anim.show {
+  background: rgba(30, 30, 40, 0.28);
+  backdrop-filter: blur(22px) saturate(140%);
+}
