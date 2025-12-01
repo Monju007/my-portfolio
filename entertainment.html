@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Entertainment — MD MONJURUL ALAM</title>
+    <meta
+      name="description"
+      content="Games — Tic Tac Toe, Rock Paper Scissors, Memory, Snake - MD MONJURUL ALAM"
+    />
+
+    <!-- Fonts / Main styles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAV (reuse your site nav) -->
+    <nav class="nav" aria-label="Main">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">MD MONJURUL ALAM</a>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          ☰
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="entertainment.html">Entertainment</a></li>
+        </ul>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          🌙
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="container page">
+        <h1>Entertainment Zone 🎮</h1>
+        <p class="muted">
+          Lightweight games to relax — fully mobile-optimized.
+        </p>
+
+        <!-- tabs -->
+        <div class="game-tabs" role="tablist" aria-label="Games">
+          <button
+            class="game-tab active"
+            data-game="tic"
+            role="tab"
+            aria-selected="true"
+          >
+            Tic Tac Toe
+          </button>
+          <button
+            class="game-tab"
+            data-game="rps"
+            role="tab"
+            aria-selected="false"
+          >
+            Rock Paper Scissors
+          </button>
+          <button
+            class="game-tab"
+            data-game="memory"
+            role="tab"
+            aria-selected="false"
+          >
+            Memory
+          </button>
+          <button
+            class="game-tab"
+            data-game="snake"
+            role="tab"
+            aria-selected="false"
+          >
+            Snake
+          </button>
+        </div>
+
+        <!-- games wrapper -->
+        <div class="games-wrapper">
+          <!-- TIC TAC TOE -->
+          <section
+            id="tic"
+            class="game glass game-active"
+            role="region"
+            aria-labelledby="tic-title"
+            data-game="tic"
+          >
+            <h2 id="tic-title">Tic Tac Toe</h2>
+            <p id="tic-status" class="muted" aria-live="polite">
+              Player X's turn
+            </p>
+
+            <div id="tic-board-container" class="board-container">
+              <!-- board created by JS for responsive sizing -->
+            </div>
+
+            <div class="game-actions">
+              <button id="tic-restart" class="btn primary large">
+                Restart
+              </button>
+              <button id="tic-ai" class="btn ghost large">Play vs AI</button>
+            </div>
+          </section>
+
+          <!-- ROCK PAPER SCISSORS -->
+          <section
+            id="rps"
+            class="game glass"
+            role="region"
+            aria-labelledby="rps-title"
+            data-game="rps"
+          >
+            <h2 id="rps-title">Rock • Paper • Scissors</h2>
+            <div class="rps-row">
+              <button class="rps-btn large" data-choice="rock">✊ Rock</button>
+              <button class="rps-btn large" data-choice="paper">
+                ✋ Paper
+              </button>
+              <button class="rps-btn large" data-choice="scissors">
+                ✌ Scissors
+              </button>
+            </div>
+            <p id="rps-result" class="muted" aria-live="polite"></p>
+            <div class="game-actions">
+              <button id="rps-reset" class="btn ghost large">Reset</button>
+            </div>
+          </section>
+
+          <!-- MEMORY -->
+          <section
+            id="memory"
+            class="game glass"
+            role="region"
+            aria-labelledby="memory-title"
+            data-game="memory"
+          >
+            <h2 id="memory-title">Memory Match</h2>
+            <p class="muted">Tap cards to find pairs.</p>
+            <div id="memory-grid" class="memory-grid" aria-live="polite"></div>
+            <p id="memory-status" class="muted"></p>
+            <div class="game-actions">
+              <button id="memory-reset" class="btn primary large">
+                Restart
+              </button>
+            </div>
+          </section>
+
+          <!-- SNAKE -->
+          <section
+            id="snake"
+            class="game glass"
+            role="region"
+            aria-labelledby="snake-title"
+            data-game="snake"
+          >
+            <h2 id="snake-title">Snake</h2>
+            <div class="snake-wrap">
+              <canvas id="snake-canvas" aria-label="Snake game canvas"></canvas>
+            </div>
+            <div class="snake-controls muted">Use swipe or arrow keys</div>
+            <div class="game-actions">
+              <button id="snake-reset" class="btn primary large">
+                Restart
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MD MONJURUL ALAM.</p></div>
+    </footer>
+
+    <!-- site script (your core script) -->
+    <script src="script.js"></script>
+
+    <!-- games script (new modular rewritten JS) -->
+    <script src="games.js"></script>
+  </body>
+</html>
