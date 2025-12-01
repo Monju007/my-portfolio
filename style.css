@@ -957,3 +957,296 @@ body.dark .project-info {
     backdrop-filter: blur(22px) saturate(140%);
   }
 }
+/* Entertainment Page – Tic Tac Toe */
+.tictactoe {
+  max-width: 330px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 14px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+#status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  justify-content: center;
+  gap: 6px;
+}
+
+.cell {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
+  user-select: none;
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(211, 22, 22, 0.25);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell.played {
+  background: rgba(0, 123, 255, 0.3);
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+/* Game Tabs */
+.game-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.4rem;
+  overflow-x: auto;
+}
+
+.game-tab {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Game Container */
+.game {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.game-active {
+  display: block !important;
+}
+
+/* RPS */
+.rps-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.rps-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.rps-result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Memory Game */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 10px;
+  justify-content: center;
+}
+.memory-card {
+  width: 70px;
+  height: 70px;
+  background: rgba(184, 33, 33, 0.2);
+  border-radius: 10px;
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.memory-card.matched {
+  background: var(--accent);
+  color: white;
+}
+
+/*here*/
+
+/* ============================
+   Games: responsive + mobile friendly
+   Append to bottom of style.css
+   ============================ */
+
+/* Tabs */
+.game-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.game-tab {
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.game-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Game containers */
+.games-wrapper .game {
+  display: none;
+}
+.games-wrapper .game.game-active {
+  display: block;
+}
+.game {
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.06);
+}
+
+/* Tic board container */
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.tic-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.tic-cell {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  touch-action: manipulation;
+}
+
+/* ensure large touch target */
+.btn.large {
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+/* RPS */
+.rps-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.rps-btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+/* Memory */
+.memory-grid {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.memory-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  user-select: none;
+}
+
+/* Snake canvas wrapper */
+.snake-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+}
+#snake-canvas {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  background: transparent;
+  touch-action: none;
+}
+
+/* small screens adjustments */
+@media (max-width: 480px) {
+  .tic-cell {
+    font-size: 1.6rem;
+  }
+  .memory-grid {
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+  }
+  .game {
+    padding: 12px;
+  }
+}
+
+/* larger screens */
+@media (min-width: 481px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+  }
+}
+
+/* accessibility focus */
+.tic-cell:focus,
+.memory-card:focus,
+.rps-btn:focus,
+.game-tab:focus {
+  outline: 3px solid rgba(10, 132, 255, 0.18);
+  outline-offset: 3px;
+}
+
+/* small polished touches */
+.game-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
