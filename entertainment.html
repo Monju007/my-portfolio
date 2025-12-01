@@ -4,25 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Entertainment — MD MONJURUL ALAM</title>
-    <meta
-      name="description"
-      content="Games — Tic Tac Toe, Rock Paper Scissors, Memory, Snake - MD MONJURUL ALAM"
-    />
 
-    <!-- Fonts / Main styles -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- main CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- games styles (optional separate file) -->
+    <link rel="stylesheet" href="games.css" />
   </head>
 
-  <body>
-    <!-- NAV (reuse your site nav) -->
-    <nav class="nav" aria-label="Main">
+  <body class="entertainment-body">
+    <nav class="nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a class="brand" href="index.html">MD MONJURUL ALAM</a>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
           ☰
         </button>
         <ul class="nav-links" id="nav-links">
@@ -43,151 +45,95 @@
         </button>
       </div>
     </nav>
+    <header class="game-header">
+      <div class="container">
+        <h1 class="hub-title">🎮 Entertainment Zone</h1>
+        <p class="hub-sub">Quick games to relax — tap a tile to launch.</p>
+      </div>
+    </header>
 
-    <main>
-      <section class="container page">
-        <h1>Entertainment Zone 🎮</h1>
-        <p class="muted">
-          Lightweight games to relax — fully mobile-optimized.
-        </p>
+    <main class="container">
+      <section class="launcher-grid" role="list" aria-label="Game launcher">
+        <!-- Tile structure: data-target is the URL to open -->
+        <article
+          class="launcher-tile"
+          role="listitem"
+          tabindex="0"
+          data-target="games/tic-tac-toe.html"
+        >
+          <div class="tile-visual">
+            <!-- SVG icon -->
+            <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 3h10v2H7zM3 7h18v2H3zM7 11h10v2H7zM3 15h18v2H3zM7 19h10v2H7z"
+              />
+            </svg>
+          </div>
+          <h3 class="tile-title">Tic Tac Toe</h3>
+          <p class="tile-sub">Unbeatable Minimax AI</p>
+        </article>
 
-        <!-- tabs -->
-        <div class="game-tabs" role="tablist" aria-label="Games">
-          <button
-            class="game-tab active"
-            data-game="tic"
-            role="tab"
-            aria-selected="true"
-          >
-            Tic Tac Toe
-          </button>
-          <button
-            class="game-tab"
-            data-game="rps"
-            role="tab"
-            aria-selected="false"
-          >
-            Rock Paper Scissors
-          </button>
-          <button
-            class="game-tab"
-            data-game="memory"
-            role="tab"
-            aria-selected="false"
-          >
-            Memory
-          </button>
-          <button
-            class="game-tab"
-            data-game="snake"
-            role="tab"
-            aria-selected="false"
-          >
-            Snake
-          </button>
-        </div>
+        <article
+          class="launcher-tile"
+          role="listitem"
+          tabindex="0"
+          data-target="games/snake.html"
+        >
+          <div class="tile-visual">
+            <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 12c0-4 3-7 7-7s7 3 7 7c0 2-1 3-3 4v2h-8v-2c-2-1-3-2-3-4z"
+              />
+            </svg>
+          </div>
+          <h3 class="tile-title">Snake</h3>
+          <p class="tile-sub">Swipe or use arrows</p>
+        </article>
 
-        <!-- games wrapper -->
-        <div class="games-wrapper">
-          <!-- TIC TAC TOE -->
-          <section
-            id="tic"
-            class="game glass game-active"
-            role="region"
-            aria-labelledby="tic-title"
-            data-game="tic"
-          >
-            <h2 id="tic-title">Tic Tac Toe</h2>
-            <p id="tic-status" class="muted" aria-live="polite">
-              Player X's turn
-            </p>
+        <article
+          class="launcher-tile"
+          role="listitem"
+          tabindex="0"
+          data-target="games/memory.html"
+        >
+          <div class="tile-visual">
+            <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 4h16v16H4zM7 7h3v3H7zm7 0h3v3h-3zM7 13h3v3H7zm7 0h3v3h-3z"
+              />
+            </svg>
+          </div>
+          <h3 class="tile-title">Memory Match</h3>
+          <p class="tile-sub">Flip & pair</p>
+        </article>
 
-            <div id="tic-board-container" class="board-container">
-              <!-- board created by JS for responsive sizing -->
-            </div>
-
-            <div class="game-actions">
-              <button id="tic-restart" class="btn primary large">
-                Restart
-              </button>
-              <button id="tic-ai" class="btn ghost large">Play vs AI</button>
-            </div>
-          </section>
-
-          <!-- ROCK PAPER SCISSORS -->
-          <section
-            id="rps"
-            class="game glass"
-            role="region"
-            aria-labelledby="rps-title"
-            data-game="rps"
-          >
-            <h2 id="rps-title">Rock • Paper • Scissors</h2>
-            <div class="rps-row">
-              <button class="rps-btn large" data-choice="rock">✊ Rock</button>
-              <button class="rps-btn large" data-choice="paper">
-                ✋ Paper
-              </button>
-              <button class="rps-btn large" data-choice="scissors">
-                ✌ Scissors
-              </button>
-            </div>
-            <p id="rps-result" class="muted" aria-live="polite"></p>
-            <div class="game-actions">
-              <button id="rps-reset" class="btn ghost large">Reset</button>
-            </div>
-          </section>
-
-          <!-- MEMORY -->
-          <section
-            id="memory"
-            class="game glass"
-            role="region"
-            aria-labelledby="memory-title"
-            data-game="memory"
-          >
-            <h2 id="memory-title">Memory Match</h2>
-            <p class="muted">Tap cards to find pairs.</p>
-            <div id="memory-grid" class="memory-grid" aria-live="polite"></div>
-            <p id="memory-status" class="muted"></p>
-            <div class="game-actions">
-              <button id="memory-reset" class="btn primary large">
-                Restart
-              </button>
-            </div>
-          </section>
-
-          <!-- SNAKE -->
-          <section
-            id="snake"
-            class="game glass"
-            role="region"
-            aria-labelledby="snake-title"
-            data-game="snake"
-          >
-            <h2 id="snake-title">Snake</h2>
-            <div class="snake-wrap">
-              <canvas id="snake-canvas" aria-label="Snake game canvas"></canvas>
-            </div>
-            <div class="snake-controls muted">Use swipe or arrow keys</div>
-            <div class="game-actions">
-              <button id="snake-reset" class="btn primary large">
-                Restart
-              </button>
-            </div>
-          </section>
-        </div>
+        <article
+          class="launcher-tile"
+          role="listitem"
+          tabindex="0"
+          data-target="games/rps.html"
+        >
+          <div class="tile-visual">
+            <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2l2 5 5 .5-4 3 1.5 5L12 13l-4.5 3.5L9 10 5 7.5 10 7z"
+              />
+            </svg>
+          </div>
+          <h3 class="tile-title">Rock • Paper • Scissors</h3>
+          <p class="tile-sub">Quick rounds</p>
+        </article>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container"><p>© 2025 MD MONJURUL ALAM.</p></div>
+      <div class="container">
+        <p>© 2025 MD MONJURUL ALAM</p>
+      </div>
     </footer>
 
-    <!-- site script (your core script) -->
+    <!-- launcher behavior + sound + animation -->
     <script src="script.js"></script>
-
-    <!-- games script (new modular rewritten JS) -->
-    <script src="games.js"></script>
+    <script src="js/launcher.js" defer></script>
   </body>
 </html>
